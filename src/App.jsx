@@ -1,8 +1,23 @@
 import React from 'react'
+import {HashRouter,Route,Link,Switch,Redirect} from 'react-router-dom'
+import Login from './components/Login'
+import Home from './components/Home'
+
 class App extends React.Component{
 	render(){
 		return (
-			<div>这是根组件</div>
+			<HashRouter>
+				
+			
+				<Switch>
+					<Route path="/" exact component={Home}></Route>
+				    
+					<Route path="/login" component={Login}></Route>
+					<Route path="/home" component={Home}></Route>
+					{/* <Redirect  exact from="/" to="/home" /> */}
+				</Switch>
+				
+			</HashRouter>
 		)
 	}
 }
